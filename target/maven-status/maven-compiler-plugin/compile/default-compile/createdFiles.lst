@@ -1,0 +1,5 @@
+com\lyf\quiet\mappers\DepartmentMapper.class
+com\lyf\quiet\service\impl\DepartmentServiceImpl.class
+com\lyf\quiet\controller\DepartController.class
+com\lyf\quiet\entities\Department.class
+com\lyf\quiet\service\DepartmentService.class

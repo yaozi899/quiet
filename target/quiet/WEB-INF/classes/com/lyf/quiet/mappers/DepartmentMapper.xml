@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lyf.quiet.mappers.DepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.lyf.quiet.entities.Department" >
+    <id column="DEPA_ID" property="depaId" jdbcType="INTEGER" />
+    <result column="DEPA_NAME" property="depaName" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_dept
+    where DEPA_ID = #{depaId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lyf.quiet.entities.Department" >
+    insert into t_dept (DEPA_ID, DEPA_NAME
+      )
+    values (#{depaId,jdbcType=INTEGER}, #{depaName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lyf.quiet.entities.Department" >
+    update t_dept
+    set DEPA_NAME = #{depaName,jdbcType=VARCHAR}
+    where DEPA_ID = #{depaId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select DEPA_ID, DEPA_NAME
+    from t_dept
+    where DEPA_ID = #{depaId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, DEPA_ID, DEPA_NAME
+    from t_dept
+  </select>
+</mapper>
